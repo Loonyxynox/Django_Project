@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: black;
+            font-family: 'Alegreya Sans SC', sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'ecomapp:home' %}">Ecommerce</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'ecomapp:adminhome' %}">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'ecomapp:adminorderlist' %}">All Orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'ecomapp:adminproductlist' %}">All Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin:index' %}" target="_blank">Visit admin panel</a>
+            </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="{% url 'ecomapp:search' %}" method="GET">
+            <input name="keyword" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+            <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <hr>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <hr>
+
+    <footer class="bg-dark text-center text-lg-start text-white">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: black">
+              © 2021 Copyright: Suraj          
+            </div>
+            <!-- Copyright -->
+    </footer>
+</body>
+</html>
