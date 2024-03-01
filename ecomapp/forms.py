@@ -31,9 +31,8 @@ class CustomerLoginForm(forms.Form):
 
 
 class ProductForm(forms.ModelForm):
-    more_images = forms.FileField(required=False, widget=forms.FileInput(attrs={
-        "class": "form-control",
-        "multiple": True
+    more_images = forms.FileField(required=False, widget=forms.ClearableFileInput(attrs={
+        "class": "form-control"
     }))
 
     class Meta:
@@ -76,7 +75,6 @@ class ProductForm(forms.ModelForm):
                 "class": "form-control",
                 "placeholder": "Enter the product return policy here..."
             }),
-
         }
 
 

@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from django.conf.global_settings import DEFAULT_AUTO_FIELD
+
+
+# Configure DEFAULT_AUTO_FIELD
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
